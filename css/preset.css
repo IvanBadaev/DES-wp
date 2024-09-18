@@ -1,0 +1,204 @@
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";
+
+.vacancies--hide .vacancies-collapsible {
+  display : none;
+}
+.vacancies-slide--visible {
+  background-color: rgba(217, 217, 217, 1);
+  height : auto;
+}
+.vacancies-slide--visible h3 {
+  color : black;
+  font-size : 20px;
+  height : 70px;
+  box-sizing: border-box;
+  max-width : 70%;
+}
+@media (max-width : 768px) {
+  .vacancies-slide--visible h3 {
+    color : black;
+    font-size : 18px;
+    height : auto;
+    box-sizing: border-box;
+  }
+}
+@media (max-width : 480px) {
+  .vacancies-slide--visible h3 {
+    font-size : 16px;
+
+  }
+}
+
+@media (max-width : 1200px) {
+  .container--collapse {
+    padding-inline: 0px !important;
+  }
+}
+.services-card--active p, .services-card--active summary, .services-card--active h2 {
+  color : white;
+}
+.services-card--active summary {
+  padding-bottom : 40px;
+}
+.services-card--active {
+  background-color : rgba(4, 61, 32, 0.7);
+  background-image :url('/public/images/services/vent.jfif');
+  background-repeat : no-repeat;
+  background-size : cover;
+  background-blend-mode:color
+}
+.hero-shadow {
+  text-shadow: 0px 0 10px rgb(230, 228, 223);
+}
+
+@layer base {
+  @font-face {
+    font-family: "Lato";
+    src: url("../public/fonts/Lato/Lato-Regular.ttf");
+    src: local("Lato Regular"), local("Lato-Regular"), url("../public/fonts/Lato/Lato-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Lato";
+    src: url("../public/fonts/Lato/Lato-Light.ttf");
+    src: local("Lato-Light"), local("Lato-Light"), url("../public/fonts/Lato/Lato-Light.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Lato";
+    src: url("../public/fonts/Lato/Lato-SemiBold.ttf");
+    src: local("Lato-SemiBold"), local("Lato-SemiBold"), url("../public/fonts/Lato/Lato-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Montserrat";
+    src: url("../public/fonts/Montserrat/Montserrat-Regular.ttf");
+    src: local("Montserrat-Regular"), local("Montserrat-Regular"), url("../public/fonts/Montserrat/Montserrat-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Montserrat";
+    src: url("../public/fonts/Montserrat/Montserrat-SemiBold.ttf");
+    src: local("Montserrat-SemiBold"), local("Montserrat-SemiBold"), url("../public/fonts/Montserrat/Montserrat-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+  }
+}
+
+@layer components {
+  .container {
+    max-width : 1600px;
+    padding-inline : 80px;
+    margin : auto;
+  }
+  @media (max-width: 1024px) {
+    .container {
+      padding-inline : 40px;
+    }
+  }
+
+
+  .section {
+    margin-bottom : clamp(200px, 20vw, 310px)
+  }
+  @media (max-width: 1024px) {
+    .section {
+      margin-bottom : clamp(170px, 20vw, 200px)
+    }
+  }
+  @media (max-width: 1024px) {
+    .section {
+      margin-bottom : clamp(80px, 20vw, 170px)
+    }
+  }
+  .swiper-slide .slide-text {
+    visibility : hidden;
+  }
+  .swiper-slide-fully-visible .slide-text, .swiper-slide-next .slide-text {
+    visibility : visible;
+  }
+  .swiper-slide-fully-visible, .swiper-slide-next {
+    width : 40vw !important;
+  }
+  details > summary:first-of-type {
+    list-style-type: none;
+  }
+
+  .card__slide-right {
+    animation : 30s linear infinite slideRight;
+  }
+  address {
+    font-style : normal;
+  }
+
+  @keyframes slideRight {
+    from {
+      transform : translateX(0vw)
+    }
+    to {
+      transform : translateX(max(200vw, 1920px))
+    }
+  }
+
+  
+  .custom-checkbox::before {
+    content : '';
+    display : block;
+    width : 25px;
+    height : 25px;
+    background-color : rgba(217, 217, 217, 1);
+    border : 1px solid rgba(49, 49, 49, 1);
+    border-radius : 1px;
+    box-sizing : border-box;
+  }
+  .custom-checkbox::after {
+    content : '';
+    width : 22px;
+    height : 26px;
+    position : absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-65%);
+    opacity : 0;
+    background-image : url('/public/images/Vector20.png');
+    background-repeat : no-repeat;
+    background-size : cover;
+    transition : opacity 0.2s ease
+  }
+  @media (max-width : 480px) {
+    .custom-checkbox::after {
+
+      transform: translate(-20%,-65%);
+
+    }
+  }
+  .custom-checkbox:checked::after {
+    opacity : 1;
+  }
+  .custom-checkbox {
+    position : relative;
+    overflow : visible;
+    width : 25px;
+    height : 25px;
+    background : transparent;
+    padding-right : 20px;
+  }
+  .custom-checkbox:hover {
+    cursor:pointer
+  }
+  .slide--active p {
+    visibility : visible !important
+  }
+  
+
+}
+

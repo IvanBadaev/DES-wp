@@ -1,0 +1,16 @@
+{
+  "name": "des",
+  "version": "1.0.0",
+  "scripts": {
+    "tw-watch": "npx tailwindcss -i ./css/preset.css -o ./css/style.css --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "swiper": "^11.1.12"
+  },
+  "devDependencies": {
+    "express": "^4.21.0"
+  }
+}
